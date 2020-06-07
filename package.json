@@ -2,6 +2,7 @@
   "name": "search-lite",
   "version": "0.1.0",
   "description": "Minimal GraphQL endpoint to a flexsearch.js index",
+  "repository": "https://github.com/jgosmann/search-lite",
   "main": "src/app.js",
   "scripts": {
     "format": "prettier --write \"**/*.{graphql,js,json}\"",

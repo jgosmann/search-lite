@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "description": "Minimal GraphQL endpoint to a flexsearch.js index",
   "repository": "https://github.com/jgosmann/search-lite",
-  "main": "src/app.js",
+  "main": "app.js",
   "scripts": {
     "format": "prettier --write \"**/*.{graphql,js,json}\"",
-    "start": "node src/app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

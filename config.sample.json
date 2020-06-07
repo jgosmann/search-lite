@@ -1,0 +1,14 @@
+{
+  "searchIndexUrl": "http://localhost:9000/search.json",
+  "pageSize": 25,
+  "docSchema": "schema-doc.graphql",
+  "index": {
+    "encode": "advanced",
+    "tokenize": "reverse",
+    "doc": {
+      "id": "search:id",
+      "store": ["title"],
+      "field": ["title", "content"]
+    }
+  }
+}

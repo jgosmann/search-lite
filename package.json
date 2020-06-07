@@ -1,0 +1,27 @@
+{
+  "name": "search-lite",
+  "version": "0.1.0",
+  "description": "Minimal GraphQL endpoint to a flexsearch.js index",
+  "main": "src/app.js",
+  "scripts": {
+    "format": "prettier --write \"**/*.{graphql,js,json}\"",
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "search",
+    "GraphQL",
+    "flexsearch"
+  ],
+  "author": "Jan Gosmann <jan@hyper-world.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "apollo-server": "^2.14.2",
+    "axios": "^0.19.2",
+    "flexsearch": "^0.6.32"
+  }
+}

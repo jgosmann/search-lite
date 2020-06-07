@@ -1,0 +1,36 @@
+type Document {
+  pagePath: String!
+  childMdx: ChildMdx!
+}
+
+type ChildMdx {
+  background: Background
+  frontmatter: Frontmatter!
+  timeToRead: Int!
+}
+
+type Frontmatter {
+  categories: [String!]
+  date: String
+  title: String!
+  map: String
+}
+
+type Background {
+  childImageSharp: ImageSharp!
+}
+
+type ImageSharp {
+  fixed: FixedImage!
+}
+
+type FixedImage {
+  base64: String
+  tracedSVG: String
+  width: Int!
+  height: Int!
+  src: String!
+  srcSet: String!
+  srcWebp: String
+  srcSetWebp: String
+}

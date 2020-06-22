@@ -1,4 +1,7 @@
 {
+  "cors": {
+    "origin": "*"
+  },
   "searchIndexUrl": "http://localhost:9000/search.json",
   "pageSize": 25,
   "docSchema": "schema-doc.graphql",

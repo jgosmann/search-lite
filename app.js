@@ -37,7 +37,7 @@ const main = async () => {
     },
   }
 
-  const server = new ApolloServer({ typeDefs, resolvers })
+  const server = new ApolloServer({ cors: config.cors, typeDefs, resolvers })
   return await server.listen()
 }
 

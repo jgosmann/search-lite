@@ -4,6 +4,7 @@ type Document {
 }
 
 type ChildMdx {
+  id: ID!
   background: Background
   frontmatter: Frontmatter!
   timeToRead: Int!

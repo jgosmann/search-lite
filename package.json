@@ -17,12 +17,12 @@
   "author": "Jan Gosmann <jan@hyper-world.de>",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^7.2.0",
-    "prettier": "^2.0.5"
+    "eslint": "^7.9.0",
+    "prettier": "^2.1.2"
   },
   "dependencies": {
-    "apollo-server": "^2.14.2",
-    "axios": "^0.19.2",
+    "apollo-server": "^2.18.1",
+    "axios": "^0.20.0",
     "flexsearch": "^0.6.32"
   }
 }

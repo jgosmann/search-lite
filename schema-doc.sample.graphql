@@ -22,16 +22,6 @@ type Background {
 }
 
 type ImageSharp {
-  fixed: FixedImage!
+  gatsbyImageData: JSON!
 }
 
-type FixedImage {
-  base64: String
-  tracedSVG: String
-  width: Int!
-  height: Int!
-  src: String!
-  srcSet: String!
-  srcWebp: String
-  srcSetWebp: String
-}

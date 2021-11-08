@@ -21,7 +21,7 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
-    "apollo-server": "^2.18.1",
+    "apollo-server": "^2.25.3",
     "axios": "^0.21.2",
     "flexsearch": "^0.6.32"
   }

@@ -1,4 +1,5 @@
-const { ApolloServer, gql } = require("apollo-server")
+const { ApolloServer } = require("@apollo/server")
+const { startStandaloneServer } = require("@apollo/server/standalone")
 const axios = require("axios").default
 const FlexSearch = require("flexsearch")
 const fs = require("fs/promises")
@@ -14,7 +15,7 @@ const main = async () => {
       : await fs.readFile(config.searchIndexFile)
   )
 
-  const typeDefs = gql`
+  const typeDefs = `
     type Query {
       search(query: String!, page: String): Page!
       document(id: ID!): Document
@@ -41,7 +42,9 @@ const main = async () => {
   }
 
   const server = new ApolloServer({ cors: config.cors, typeDefs, resolvers })
-  return await server.listen()
+  return await startStandaloneServer(server, {
+    listen: { port: 4000 },
+  })
 }
 
 main().then(({ url }) => {

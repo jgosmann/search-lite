@@ -7,7 +7,7 @@ type ChildMdx {
   id: ID!
   background: Background
   frontmatter: Frontmatter!
-  timeToRead: Int!
+  fields: Fields!
 }
 
 type Frontmatter {
@@ -21,7 +21,15 @@ type Background {
   childImageSharp: ImageSharp!
 }
 
+scalar JSON
 type ImageSharp {
   gatsbyImageData: JSON!
 }
 
+type Fields {
+  timeToRead: TimeToRead!
+}
+
+type TimeToRead {
+  minutes: Float!
+}

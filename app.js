@@ -1,14 +1,17 @@
 const { ApolloServer, gql } = require("apollo-server")
 const axios = require("axios").default
 const FlexSearch = require("flexsearch")
-const fs = require("fs")
+const fs = require("fs/promises")
 
 const main = async () => {
-  const config = JSON.parse(await fs.promises.readFile("config.json"))
+  const config = JSON.parse(await fs.readFile("config.json"))
 
   const searchIndex = new FlexSearch(config.indexConfig)
   searchIndex.import(
-    (await axios.get(config.searchIndexUrl, { transformResponse: x => x })).data
+    config.searchIndexUrl
+      ? (await axios.get(config.searchIndexUrl, { transformResponse: x => x }))
+          .data
+      : await fs.readFile(config.searchIndexFile)
   )
 
   const typeDefs = gql`
@@ -23,7 +26,7 @@ const main = async () => {
       result: [Document!]!
     }
 
-    ${await fs.promises.readFile(config.docSchema)}
+    ${await fs.readFile(config.docSchema)}
   `
 
   const resolvers = {

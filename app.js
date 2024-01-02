@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { ApolloServer } = require("@apollo/server")
 const { startStandaloneServer } = require("@apollo/server/standalone")
 const axios = require("axios").default

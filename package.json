@@ -17,7 +17,7 @@
   "author": "Jan Gosmann <jan@hyper-world.de>",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.35.0",
+    "eslint": "^9.3.0",
     "prettier": "^3.0.3"
   },
   "dependencies": {

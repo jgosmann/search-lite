@@ -23,7 +23,7 @@
   "dependencies": {
     "@apollo/server": "^4.7.4",
     "axios": "^1.6.0",
-    "flexsearch": "^0.6.32",
+    "flexsearch": "^0.8.143",
     "graphql": "^16.6.0"
   }
 }

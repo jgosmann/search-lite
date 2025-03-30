@@ -3,18 +3,19 @@
 const { ApolloServer } = require("@apollo/server")
 const { startStandaloneServer } = require("@apollo/server/standalone")
 const axios = require("axios").default
-const FlexSearch = require("flexsearch")
+const { Document } = require("flexsearch")
 const fs = require("fs/promises")
 
 const main = async () => {
   const config = JSON.parse(await fs.readFile("config.json"))
 
-  const searchIndex = new FlexSearch(config.indexConfig)
-  searchIndex.import(
-    config.searchIndexUrl
-      ? (await axios.get(config.searchIndexUrl, { transformResponse: x => x }))
-          .data
-      : await fs.readFile(config.searchIndexFile)
+  const searchIndex = new Document(config.indexConfig)
+  const dataToImport = config.searchIndexUrl
+    ? (await axios.get(config.searchIndexUrl, { transformResponse: x => x }))
+        .data
+    : await fs.readFile(config.searchIndexFile)
+  Object.entries(JSON.parse(dataToImport)).map(([key, data]) =>
+    searchIndex.import(key, data)
   )
 
   const typeDefs = `
